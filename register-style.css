@@ -1,161 +1,187 @@
-/* General Reset and Body Styling */
+/* Importing Google Fonts - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
-    background: #f2f2f2;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh; /* Allows the content to expand beyond the initial viewport */
-    overflow-y: auto; /* Enables vertical scrolling */
-    position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background: linear-gradient(135deg, #71b7e6, #9b59b6);
 }
 
-/* Register Container */
-.register-container {
-    position: relative;
-    z-index: 2;
-    background: rgba(255, 255, 255, 0.8);
-    padding: 40px 50px;
-    border-radius: 15px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    width: 100%;
-    max-width: 500px;
-    margin: 20px 0; /* Adds space above and below the container */
+.container {
+  max-width: 700px;
+  width: 100%;
+  background-color: #fff;
+  padding: 25px 30px;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
 }
 
-h2 {
-    font-size: 2.2rem;
-    margin-bottom: 20px;
-    color: #23497C;
+.container .title {
+  font-size: 25px;
+  font-weight: 500;
+  position: relative;
 }
 
-/* Form Group Styling */
-.form-group {
-    width: 80%;
-    margin-bottom: 20px;
-    text-align: left;
-    margin-left: auto;
-    margin-right: auto;
+.container .title::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 30px;
+  border-radius: 5px;
+  background: linear-gradient(135deg, #71b7e6, #9b59b6);
 }
 
-label {
-    display: block;
-    font-size: 1rem;
-    margin-bottom: 5px;
-    color: #23497C;
+.content form .user-details {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px 0 12px 0;
 }
 
-/* Input Fields Styling */
-.input-field {
-    width: 100%;  /* Ensures all inputs (text, email, date, select) are the same width */
-    padding: 15px;
-    margin-bottom: 20px;  /* Uniform margin between fields */
-    border: 2px solid #ddd;
-    border-radius: 10px;
-    font-size: 1rem;
-    outline: none;
-    transition: border-color 0.3s ease;
+form .user-details .input-box {
+  margin-bottom: 15px;
+  width: calc(100% / 2 - 20px);
 }
 
-.input-field:focus {
-    border-color: #FF6B6B;
+form .input-box span.details {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 5px;
 }
 
-/* Gender Dropdown Styling */
-.gender-container {
-    width: 80%;  /* Ensure full width, same as input fields */
-    text-align: left;  /* Align the label to the left */
+.user-details .input-box input {
+  height: 45px;
+  width: 100%;
+  outline: none;
+  font-size: 16px;
+  border-radius: 5px;
+  padding-left: 15px;
+  border: 1px solid #ccc;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
 }
 
-select {
-    width: 100%;  /* Make the gender select dropdown same width as input fields */
-    padding: 15px;
-    margin-bottom: 20px;  /* Same bottom margin as other input fields */
-    border: 2px solid #ddd;
-    border-radius: 10px;
-    font-size: 1rem;
-    outline: none;
-    transition: border-color 0.3s ease;
+/* Highlight on Focus or Valid Input */
+.user-details .input-box input:focus,
+.user-details .input-box input:valid {
+  border-color: #9b59b6;
 }
 
-select:focus {
-    border-color: #FF6B6B;
+/* Date Picker Styles */
+.user-details .input-box input[type="date"] {
+  color: #666; /* Default text color */
+  padding-left: 10px; /* Align with text fields */
 }
 
-/* Register Button Styling */
-.register-btn {
-    padding: 15px 30px;
-    font-size: 1.2rem;
-    background-color: #FF6B6B;
-    color: white;
-    border: none;
-    border-radius: 30px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    width: 100%;  /* Ensures the button takes up the full width */
+.user-details .input-box input[type="date"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  opacity: 0.8; /* Slight transparency for a modern look */
 }
 
-.register-btn:hover {
-    background-color: #FF8C42;
+.user-details .input-box input[type="date"]:focus::-webkit-calendar-picker-indicator {
+  opacity: 1; /* Fully visible on focus */
 }
 
-/* Background Images Styling */
-.background-images {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+form .gender-details .gender-title {
+  font-size: 20px;
+  font-weight: 500;
 }
 
-.bg-image {
-    position: absolute;
-    opacity: 0.3;
-    transition: opacity 1s ease-in-out;
+form .category {
+  display: flex;
+  width: 80%;
+  margin: 14px 0;
+  justify-content: space-between;
+}
+
+form .category label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+form .category label .dot {
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  margin-right: 10px;
+  background: #d9d9d9;
+  border: 5px solid transparent;
+  transition: all 0.3s ease;
+}
+
+#dot-1:checked~.category label .one,
+#dot-2:checked~.category label .two,
+#dot-3:checked~.category label .three {
+  background: #9b59b6;
+  border-color: #d9d9d9;
+}
+
+form input[type="radio"] {
+  display: none;
+}
+
+form .button {
+  height: 45px;
+  margin: 35px 0;
+}
+
+form .button input {
+  height: 100%;
+  width: 100%;
+  border-radius: 5px;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: linear-gradient(135deg, #71b7e6, #9b59b6);
+}
+
+form .button input:hover {
+  background: linear-gradient(-135deg, #71b7e6, #9b59b6);
+}
+
+/* Responsive Media Queries */
+@media(max-width: 584px) {
+  .container {
     max-width: 100%;
-    max-height: 100%;
-    object-fit: cover;
-    animation: randomBackground 30s infinite;
+  }
+
+  form .user-details .input-box {
+    width: 100%;
+  }
+
+  form .category {
+    width: 100%;
+  }
+
+  .content form .user-details {
+    max-height: 300px;
+    overflow-y: scroll;
+  }
+
+  .user-details::-webkit-scrollbar {
+    width: 5px;
+  }
 }
 
-/* Random background images animation */
-@keyframes randomBackground {
-    0% { opacity: 0.3; }
-    50% { opacity: 1; }
-    100% { opacity: 0.3; }
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .register-container {
-        width: 90%;
-        padding: 30px 20px;
-    }
-
-    .input-field, select {
-        width: 100%; /* Ensures all input fields including select are responsive */
-    }
-
-    .register-btn {
-        font-size: 1rem;
-        padding: 12px 25px;
-    }
-}
-
-@media (max-height: 700px) {
-    .register-container {
-        margin: 20px 0; /* Ensure space is added on smaller viewport heights */
-    }
+@media(max-width: 459px) {
+  .container .content .category {
+    flex-direction: column;
+  }
 }
