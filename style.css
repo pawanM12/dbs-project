@@ -1,0 +1,199 @@
+/* Reset and Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #FF6B6B, #FF8C42);
+    color: #fff;
+    overflow-x: hidden;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background: linear-gradient(135deg, #1E3D58, #23497C);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+header .logo {
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+header nav a {
+    color: #fff;
+    margin-left: 25px;
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+header nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #FF6B6B;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: width 0.3s ease;
+}
+
+header nav a:hover {
+    color: #FF6B6B;
+}
+
+header nav a:hover::after {
+    width: 100%;
+}
+
+.hero {
+    background: linear-gradient(135deg, #FF6B6B, #FF8C42);
+    color: white;
+    text-align: center;
+    padding: 120px 20px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.4rem;
+    margin-bottom: 30px;
+}
+
+.cta-btn {
+    background-color: #1E3D58;
+    color: white;
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cta-btn:hover {
+    background-color: #23497C;
+}
+
+.hospitals, .reviews, .appointment {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.hospitals h2, .reviews h2, .appointment h2 {
+    font-size: 2.5rem;
+    color: #fff;
+    margin-bottom: 30px;
+}
+
+.hospital-images img {
+    width: 30%;
+    margin: 0 15px;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.hospital-images img:hover {
+    transform: scale(1.1);
+}
+
+.reviews-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.review-card {
+    background-color: #ffffff;
+    color: #333;
+    width: 300px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.review-card:hover {
+    transform: translateY(-10px);
+}
+
+.appointment button {
+    background-color: #FF6B6B;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    border: none;
+    color: white;
+    cursor: not-allowed;
+    border-radius: 50px;
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+}
+
+.appointment button.enabled {
+    cursor: pointer;
+    opacity: 1;
+}
+
+.appointment p {
+    color: #fff;
+    font-size: 1.1rem;
+    margin-top: 10px;
+}
+
+footer {
+    text-align: center;
+    background-color: #1E3D58;
+    padding: 20px 0;
+    color: white;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #FF6B6B;
+}
+
+.social-links {
+    margin-top: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hospital-images img {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .reviews-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .review-card {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+
+    .cta-btn {
+        font-size: 1.2rem;
+        padding: 12px 25px;
+    }
+}

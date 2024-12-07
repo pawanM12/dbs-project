@@ -1,0 +1,154 @@
+/* General Reset and Body Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #f2f2f2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Register Container */
+.register-container {
+    position: relative;
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 40px 50px;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+}
+
+h2 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    color: #23497C;
+}
+
+/* Form Group Styling */
+.form-group {
+    width: 80%;
+    margin-bottom: 20px;
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+label {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 5px;
+    color: #23497C;
+}
+
+/* Input Fields Styling */
+.input-field {
+    width: 100%;  /* Ensures all inputs (text, email, date, select) are the same width */
+    padding: 15px;
+    margin-bottom: 20px;  /* Uniform margin between fields */
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.input-field:focus {
+    border-color: #FF6B6B;
+}
+
+/* Gender Dropdown Styling */
+.gender-container {
+    width: 80%;  /* Ensure full width, same as input fields */
+    text-align: left;  /* Align the label to the left */
+}
+
+select {
+    width: 100%;  /* Make the gender select dropdown same width as input fields */
+    padding: 15px;
+    margin-bottom: 20px;  /* Same bottom margin as other input fields */
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+select:focus {
+    border-color: #FF6B6B;
+}
+
+/* Register Button Styling */
+.register-btn {
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    background-color: #FF6B6B;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;  /* Ensures the button takes up the full width */
+}
+
+.register-btn:hover {
+    background-color: #FF8C42;
+}
+
+/* Background Images Styling */
+.background-images {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bg-image {
+    position: absolute;
+    opacity: 0.3;
+    transition: opacity 1s ease-in-out;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    animation: randomBackground 30s infinite;
+}
+
+/* Random background images animation */
+@keyframes randomBackground {
+    0% { opacity: 0.3; }
+    50% { opacity: 1; }
+    100% { opacity: 0.3; }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .register-container {
+        width: 90%;
+        padding: 30px 20px;
+    }
+
+    .input-field, select {
+        width: 100%; /* Ensures all input fields including select are responsive */
+    }
+
+    .register-btn {
+        font-size: 1rem;
+        padding: 12px 25px;
+    }
+}
