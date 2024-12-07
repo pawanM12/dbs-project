@@ -11,8 +11,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    overflow: hidden;
+    min-height: 100vh; /* Allows the content to expand beyond the initial viewport */
+    overflow-y: auto; /* Enables vertical scrolling */
     position: relative;
 }
 
@@ -27,6 +27,7 @@ body {
     text-align: center;
     width: 100%;
     max-width: 500px;
+    margin: 20px 0; /* Adds space above and below the container */
 }
 
 h2 {
@@ -150,5 +151,11 @@ select:focus {
     .register-btn {
         font-size: 1rem;
         padding: 12px 25px;
+    }
+}
+
+@media (max-height: 700px) {
+    .register-container {
+        margin: 20px 0; /* Ensure space is added on smaller viewport heights */
     }
 }
